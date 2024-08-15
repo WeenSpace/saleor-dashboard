@@ -33,7 +33,7 @@ export interface TypeDeleteWarningDialogProps<T extends TypeBaseData> extends Ty
   assignedItemsCount: number | undefined;
   isLoading?: boolean;
   typesData: T[];
-  // temporary, until we add filters to pages list - SALEOR-3279
+  // temporary, until we add filters to pages list - WEENSPACE-3279
   showViewAssignedItemsButton?: boolean;
 }
 

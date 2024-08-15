@@ -409,8 +409,8 @@ export type AppManifestExtensionFieldPolicy = {
 	target?: FieldPolicy<any> | FieldReadFunction<any>,
 	url?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type AppManifestRequiredSaleorVersionKeySpecifier = ('constraint' | 'satisfied' | AppManifestRequiredSaleorVersionKeySpecifier)[];
-export type AppManifestRequiredSaleorVersionFieldPolicy = {
+export type AppManifestRequiredWeenSpaceVersionKeySpecifier = ('constraint' | 'satisfied' | AppManifestRequiredWeenSpaceVersionKeySpecifier)[];
+export type AppManifestRequiredWeenSpaceVersionFieldPolicy = {
 	constraint?: FieldPolicy<any> | FieldReadFunction<any>,
 	satisfied?: FieldPolicy<any> | FieldReadFunction<any>
 };
@@ -2407,7 +2407,7 @@ export type ListStoredPaymentMethodsFieldPolicy = {
 	user?: FieldPolicy<any> | FieldReadFunction<any>,
 	version?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type ManifestKeySpecifier = ('about' | 'appUrl' | 'audience' | 'author' | 'brand' | 'configurationUrl' | 'dataPrivacy' | 'dataPrivacyUrl' | 'extensions' | 'homepageUrl' | 'identifier' | 'name' | 'permissions' | 'requiredSaleorVersion' | 'supportUrl' | 'tokenTargetUrl' | 'version' | 'webhooks' | ManifestKeySpecifier)[];
+export type ManifestKeySpecifier = ('about' | 'appUrl' | 'audience' | 'author' | 'brand' | 'configurationUrl' | 'dataPrivacy' | 'dataPrivacyUrl' | 'extensions' | 'homepageUrl' | 'identifier' | 'name' | 'permissions' | 'requiredWeenSpaceVersion' | 'supportUrl' | 'tokenTargetUrl' | 'version' | 'webhooks' | ManifestKeySpecifier)[];
 export type ManifestFieldPolicy = {
 	about?: FieldPolicy<any> | FieldReadFunction<any>,
 	appUrl?: FieldPolicy<any> | FieldReadFunction<any>,
@@ -2422,7 +2422,7 @@ export type ManifestFieldPolicy = {
 	identifier?: FieldPolicy<any> | FieldReadFunction<any>,
 	name?: FieldPolicy<any> | FieldReadFunction<any>,
 	permissions?: FieldPolicy<any> | FieldReadFunction<any>,
-	requiredSaleorVersion?: FieldPolicy<any> | FieldReadFunction<any>,
+	requiredWeenSpaceVersion?: FieldPolicy<any> | FieldReadFunction<any>,
 	supportUrl?: FieldPolicy<any> | FieldReadFunction<any>,
 	tokenTargetUrl?: FieldPolicy<any> | FieldReadFunction<any>,
 	version?: FieldPolicy<any> | FieldReadFunction<any>,
@@ -7103,9 +7103,9 @@ export type StrictTypedTypePolicies = {
 		keyFields?: false | AppManifestExtensionKeySpecifier | (() => undefined | AppManifestExtensionKeySpecifier),
 		fields?: AppManifestExtensionFieldPolicy,
 	},
-	AppManifestRequiredSaleorVersion?: Omit<TypePolicy, "fields" | "keyFields"> & {
-		keyFields?: false | AppManifestRequiredSaleorVersionKeySpecifier | (() => undefined | AppManifestRequiredSaleorVersionKeySpecifier),
-		fields?: AppManifestRequiredSaleorVersionFieldPolicy,
+	AppManifestRequiredWeenSpaceVersion?: Omit<TypePolicy, "fields" | "keyFields"> & {
+		keyFields?: false | AppManifestRequiredWeenSpaceVersionKeySpecifier | (() => undefined | AppManifestRequiredWeenSpaceVersionKeySpecifier),
+		fields?: AppManifestRequiredWeenSpaceVersionFieldPolicy,
 	},
 	AppManifestWebhook?: Omit<TypePolicy, "fields" | "keyFields"> & {
 		keyFields?: false | AppManifestWebhookKeySpecifier | (() => undefined | AppManifestWebhookKeySpecifier),

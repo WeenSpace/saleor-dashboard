@@ -4,7 +4,7 @@ const core = require("@actions/core");
 
 const program = new Command();
 
-const pathToCloudAPI = "https://staging-cloud.saleor.io/platform/api/";
+const pathToCloudAPI = "https://staging-cloud.weenspace.com/platform/api/";
 
 const snapshotName = "snapshot-automation-tests";
 
@@ -57,7 +57,7 @@ async function getEnvironmentsToClean(token, environmentsToCleanRegex) {
 
 async function getEnvironments(token) {
   const response = await fetch(
-    `${pathToCloudAPI}organizations/saleor/environments/`,
+    `${pathToCloudAPI}organizations/weenspace/environments/`,
     {
       method: "GET",
       headers: {
@@ -72,7 +72,7 @@ async function getEnvironments(token) {
 
 async function cleanEnvironment(environment, snapshot, token) {
   const response = await fetch(
-    `${pathToCloudAPI}organizations/saleor/environments/${environment.key}/restore/`,
+    `${pathToCloudAPI}organizations/weenspace/environments/${environment.key}/restore/`,
     {
       method: "PUT",
       body: JSON.stringify({ restore_from: snapshot.key }),
@@ -102,7 +102,7 @@ async function cleanEnvironment(environment, snapshot, token) {
 
 async function getSnapshotsForRestore(token) {
   const snapshotsResponse = await fetch(
-    `${pathToCloudAPI}organizations/saleor/backups/`,
+    `${pathToCloudAPI}organizations/weenspace/backups/`,
     {
       method: "GET",
       headers: {
@@ -123,7 +123,7 @@ function sortSnapshots(snapshotList) {
   // It returns sorted list of snapshots in descending order
 
   return snapshotList.sort(function (a, b) {
-    return compareVersions(a.saleor_version, b.saleor_version);
+    return compareVersions(a.weenspace_version, b.weenspace_version);
   });
 }
 
@@ -152,7 +152,7 @@ function compareVersions(versionA, versionB) {
 
 function getLatestSnapshotForEnvironment(environmentVersion, snapshotList) {
   const compatibleSnapshots = snapshotList.filter(snapshot => {
-    return compareVersions(environmentVersion, snapshot.saleor_version) <= 0;
+    return compareVersions(environmentVersion, snapshot.weenspace_version) <= 0;
   });
   if (compatibleSnapshots.length > 0) {
     const latestSnapshot = compatibleSnapshots[0];

@@ -59,7 +59,7 @@ export const ProductVariants: React.FC<ProductVariantsProps> = ({
 }) => {
   const intl = useIntl();
 
-  // https://github.com/saleor/saleor-dashboard/issues/4165
+  // https://github.com/WeenSpace/weenspace-admin/issues/4165
   const { data: warehousesData } = useWarehouseListQuery({
     variables: {
       first: 50,
@@ -68,7 +68,7 @@ export const ProductVariants: React.FC<ProductVariantsProps> = ({
   const warehouses = mapEdgesToItems(warehousesData?.warehouses);
 
   // Normally this should be in LS handled by useListSettings hook
-  // https://github.com/saleor/saleor-dashboard/issues/4164
+  // https://github.com/WeenSpace/weenspace-admin/issues/4164
 
   const initialSettings = React.useMemo(
     () =>

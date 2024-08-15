@@ -153,9 +153,9 @@ const CustomAppDetailsPage: React.FC<CustomAppDetailsPageProps> = props => {
                 description: "checkbox label",
               })}
               description={intl.formatMessage({
-                id: "flP8Hj",
+                id: "P2NTp/",
                 defaultMessage:
-                  "Expand or restrict app permissions to access certain part of Saleor system.",
+                  "Expand or restrict app permissions to access certain part of WeenSpace system.",
                 description: "card description",
               })}
             />

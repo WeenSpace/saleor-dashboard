@@ -1,17 +1,17 @@
 {
-  "name": "saleor-dashboard",
+  "name": "weenspace-dashboard",
   "version": "3.21.0-dev",
   "main": "src/index.tsx",
   "repository": {
     "type": "git",
-    "url": "git://github.com/saleor/saleor-dashboard.git"
+    "url": "git://github.com/WeenSpace/weenspace-dashboard.git"
   },
-  "author": "Saleor Commerce",
-  "license": "BSD-3-Clause",
+  "author": "WeenSpace",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/saleor/saleor-dashboard/issues"
+    "url": "https://github.com/WeenSpace/weenspace-dashboard/issues"
   },
-  "homepage": "https://saleor.io/",
+  "homepage": "https://weenspace.com/",
   "engines": {
     "node": ">=18 <19",
     "npm": ">=7"
@@ -308,5 +308,5 @@
     "qa:pw-e2e": "npx playwright test --grep @e2e",
     "qa:pw-ui": "npx playwright test --ui"
   },
-  "description": "![Saleor Dashboard](https://user-images.githubusercontent.com/44495184/185379472-2a204c0b-9b7a-4a3e-93c0-2cb85205ed5e.png)"
+  "description": "![WeenSpace Admin](https://user-images.githubusercontent.com/44495184/185379472-2a204c0b-9b7a-4a3e-93c0-2cb85205ed5e.png)"
 }

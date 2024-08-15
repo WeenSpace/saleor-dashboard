@@ -1,5 +1,5 @@
 ---
-"saleor-dashboard": patch
+"weenspace-admin": patch
 ---
 
 Edit refund view no longer display title with typo when edit refund with line items

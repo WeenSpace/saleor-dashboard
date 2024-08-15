@@ -53,7 +53,7 @@ const Wrapper = ({ children }: { children: ReactNode }) => {
 };
 
 describe("Sidebar", () => {
-  it('shouldd render "Saleor Cloud" link when is cloud instance', () => {
+  it('shouldd render "WeenSpace Cloud" link when is cloud instance', () => {
     // Arrange
     (useCloud as jest.Mock).mockImplementation(() => ({
       isAuthenticatedViaCloud: true,
@@ -61,9 +61,9 @@ describe("Sidebar", () => {
     // Act
     render(<Sidebar />, { wrapper: Wrapper });
     // Assert
-    expect(screen.getByText("Saleor Cloud")).toBeInTheDocument();
+    expect(screen.getByText("WeenSpace Cloud")).toBeInTheDocument();
   });
-  it('shouldd not render "Saleor Cloud" link when is not cloud instance', () => {
+  it('shouldd not render "WeenSpace Cloud" link when is not cloud instance', () => {
     // Arrange
     (useCloud as jest.Mock).mockImplementation(() => ({
       isAuthenticatedViaCloud: false,
@@ -71,7 +71,7 @@ describe("Sidebar", () => {
     // Act
     render(<Sidebar />, { wrapper: Wrapper });
     // Assert
-    expect(screen.queryByText("Saleor Cloud")).not.toBeInTheDocument();
+    expect(screen.queryByText("WeenSpace Cloud")).not.toBeInTheDocument();
   });
   it("should render keyboard shortcuts", () => {
     // Arrange & Act

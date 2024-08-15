@@ -33,7 +33,7 @@ jobs:
         uses: github/issue-metrics@v3
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SEARCH_QUERY: 'repo:saleor/saleor-dashboard is:pr created:${{ env.last_month }} -reason:"not planned"'
+          SEARCH_QUERY: 'repo:weenspace/weenspace-admin is:pr created:${{ env.last_month }} -reason:"not planned"'
 
       - name: Create issue
         uses: peter-evans/create-issue-from-file@24452a72d85239eacf1468b0f1982a9f3fec4c94 # v5.0.0

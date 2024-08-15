@@ -28,9 +28,9 @@ outputs:
   BACKUP_NAMESPACE:
     description: "The backup namespace"
     value: ${{ steps.generate.outputs.BACKUP_NAMESPACE }}
-  SALEOR_CLOUD_SERVICE:
-    description: "Which saleor cloud service will be used"
-    value: ${{ steps.generate.outputs.SALEOR_CLOUD_SERVICE }}
+  WEENSPACE_CLOUD_SERVICE:
+    description: "Which weenspace cloud service will be used"
+    value: ${{ steps.generate.outputs.WEENSPACE_CLOUD_SERVICE }}
 
 runs:
   using: "composite"
@@ -46,20 +46,20 @@ runs:
 
       run: |
         if [[ "$MODE" == 'pull-request' ]]; then
-          echo "BASE_URL=https://${PREFIX}${PULL_REQUEST_NUMBER}.dashboard.saleor.rocks" >> $GITHUB_OUTPUT
-          echo "API_URL=https://${PREFIX}${PULL_REQUEST_NUMBER}.staging.saleor.cloud/graphql/" >> $GITHUB_OUTPUT
-          echo "BASE_URL_DOMAIN=${PREFIX}${PULL_REQUEST_NUMBER}.dashboard.saleor.rocks" >> $GITHUB_OUTPUT
+          echo "BASE_URL=https://${PREFIX}${PULL_REQUEST_NUMBER}.dashboard.weenspace.rocks" >> $GITHUB_OUTPUT
+          echo "API_URL=https://${PREFIX}${PULL_REQUEST_NUMBER}.staging.weenspace.cloud/graphql/" >> $GITHUB_OUTPUT
+          echo "BASE_URL_DOMAIN=${PREFIX}${PULL_REQUEST_NUMBER}.dashboard.weenspace.rocks" >> $GITHUB_OUTPUT
           echo "POOL_NAME=${PREFIX}${PULL_REQUEST_NUMBER}" >> $GITHUB_OUTPUT
-          echo "POOL_INSTANCE=https://${PREFIX}${PULL_REQUEST_NUMBER}.staging.saleor.cloud" >> $GITHUB_OUTPUT
+          echo "POOL_INSTANCE=https://${PREFIX}${PULL_REQUEST_NUMBER}.staging.weenspace.cloud" >> $GITHUB_OUTPUT
 
           if [[ "$DESTINATION_BRANCH" == 'main' ]]; then
             echo "BACKUP_NAMESPACE=snapshot-automation-tests" >> $GITHUB_OUTPUT
-            echo "SALEOR_CLOUD_SERVICE=saleor-master-staging" >> $GITHUB_OUTPUT
+            echo "WEENSPACE_CLOUD_SERVICE=weenspace-master-staging" >> $GITHUB_OUTPUT
           else
             # it handles pull requests to the other branches than main, e.g. release branches
             VERSION_SLUG=$(echo "${DESTINATION_BRANCH}" | sed "s/\.//")
             echo "BACKUP_NAMESPACE=snapshot-automation-tests-${DESTINATION_BRANCH}" >> $GITHUB_OUTPUT
-            echo "SALEOR_CLOUD_SERVICE=saleor-staging-v${VERSION_SLUG}" >> $GITHUB_OUTPUT
+            echo "WEENSPACE_CLOUD_SERVICE=weenspace-staging-v${VERSION_SLUG}" >> $GITHUB_OUTPUT
           fi
 
           exit 0
@@ -69,25 +69,25 @@ runs:
           CURRENT_BRANCH=$(echo "${GITHUB_REF}" | sed "s/refs\/heads\///")
           VERSION_SLUG=$(echo "${CURRENT_BRANCH}" | sed "s/\.//")
 
-          echo "BASE_URL=https://v${VERSION_SLUG}.staging.saleor.cloud/dashboard/" >> $GITHUB_OUTPUT
-          echo "API_URL=https://v${VERSION_SLUG}.staging.saleor.cloud/graphql/" >> $GITHUB_OUTPUT
-          echo "BASE_URL_DOMAIN=v${VERSION_SLUG}.staging.saleor.cloud" >> $GITHUB_OUTPUT
+          echo "BASE_URL=https://v${VERSION_SLUG}.staging.weenspace.cloud/dashboard/" >> $GITHUB_OUTPUT
+          echo "API_URL=https://v${VERSION_SLUG}.staging.weenspace.cloud/graphql/" >> $GITHUB_OUTPUT
+          echo "BASE_URL_DOMAIN=v${VERSION_SLUG}.staging.weenspace.cloud" >> $GITHUB_OUTPUT
           echo "POOL_NAME=${CURRENT_BRANCH} Staging" >> $GITHUB_OUTPUT
-          echo "POOL_INSTANCE=https://v${VERSION_SLUG}.staging.saleor.cloud/" >> $GITHUB_OUTPUT
+          echo "POOL_INSTANCE=https://v${VERSION_SLUG}.staging.weenspace.cloud/" >> $GITHUB_OUTPUT
           echo "BACKUP_NAMESPACE=snapshot-automation-tests-${CURRENT_BRANCH}" >> $GITHUB_OUTPUT
-          echo "SALEOR_CLOUD_SERVICE=saleor-master-staging" >> $GITHUB_OUTPUT
+          echo "WEENSPACE_CLOUD_SERVICE=weenspace-master-staging" >> $GITHUB_OUTPUT
 
           exit 0
         fi
 
         if [[ "$MODE" == 'main' ]]; then
-          echo "BASE_URL=https://automation-dashboard.staging.saleor.cloud/dashboard/" >> $GITHUB_OUTPUT
-          echo "API_URL=https://automation-dashboard.staging.saleor.cloud/graphql/" >> $GITHUB_OUTPUT
-          echo "BASE_URL_DOMAIN=automation-dashboard.staging.saleor.cloud" >> $GITHUB_OUTPUT
+          echo "BASE_URL=https://automation-dashboard.staging.weenspace.cloud/dashboard/" >> $GITHUB_OUTPUT
+          echo "API_URL=https://automation-dashboard.staging.weenspace.cloud/graphql/" >> $GITHUB_OUTPUT
+          echo "BASE_URL_DOMAIN=automation-dashboard.staging.weenspace.cloud" >> $GITHUB_OUTPUT
           echo "POOL_NAME=automation-dashboard" >> $GITHUB_OUTPUT
-          echo "POOL_INSTANCE=https://automation-dashboard.staging.saleor.cloud" >> $GITHUB_OUTPUT
+          echo "POOL_INSTANCE=https://automation-dashboard.staging.weenspace.cloud" >> $GITHUB_OUTPUT
           echo "BACKUP_NAMESPACE=snapshot-automation-tests" >> $GITHUB_OUTPUT
-          echo "SALEOR_CLOUD_SERVICE=saleor-master-staging" >> $GITHUB_OUTPUT
+          echo "WEENSPACE_CLOUD_SERVICE=weenspace-master-staging" >> $GITHUB_OUTPUT
 
           exit 0
         fi
@@ -95,13 +95,13 @@ runs:
         if [[ "$MODE" == 'from-version' ]]; then
           VERSION_SLUG=$(echo "${VERSION/./}")
 
-          echo "BASE_URL=https://v${VERSION_SLUG}.staging.saleor.cloud/dashboard/" >> "$GITHUB_OUTPUT"
-          echo "API_URL=https://v${VERSION_SLUG}.staging.saleor.cloud/graphql/" >> "$GITHUB_OUTPUT"
-          echo "BASE_URL_DOMAIN=v${VERSION_SLUG}.staging.saleor.cloud" >> "$GITHUB_OUTPUT"
+          echo "BASE_URL=https://v${VERSION_SLUG}.staging.weenspace.cloud/dashboard/" >> "$GITHUB_OUTPUT"
+          echo "API_URL=https://v${VERSION_SLUG}.staging.weenspace.cloud/graphql/" >> "$GITHUB_OUTPUT"
+          echo "BASE_URL_DOMAIN=v${VERSION_SLUG}.staging.weenspace.cloud" >> "$GITHUB_OUTPUT"
           echo "POOL_NAME=${VERSION} Staging" >> "$GITHUB_OUTPUT"
-          echo "POOL_INSTANCE=https://v${VERSION_SLUG}.staging.saleor.cloud/" >> "$GITHUB_OUTPUT"
+          echo "POOL_INSTANCE=https://v${VERSION_SLUG}.staging.weenspace.cloud/" >> "$GITHUB_OUTPUT"
           echo "BACKUP_NAMESPACE=snapshot-automation-tests-${VERSION}" >> "$GITHUB_OUTPUT"
-          echo "SALEOR_CLOUD_SERVICE=saleor-master-staging" >> $GITHUB_OUTPUT
+          echo "WEENSPACE_CLOUD_SERVICE=weenspace-master-staging" >> $GITHUB_OUTPUT
 
           exit 0
         fi

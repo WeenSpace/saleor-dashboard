@@ -68,9 +68,9 @@ export const giftCardCreateMessages = defineMessages({
     description: "issued cards amount label",
   },
   bulkCreateExplanation: {
-    id: "45aV8u",
+    id: "uexF9V",
     defaultMessage:
-      "After creation Saleor will create a list of gift card codes that you will be able to download. ",
+      "After creation WeenSpace will create a list of gift card codes that you will be able to download. ",
     description: "gift card bulk create modal bottom explanation",
   },
   bulkCreateIssuedTitle: {

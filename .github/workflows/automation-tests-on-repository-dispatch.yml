@@ -74,4 +74,4 @@ jobs:
             }
           }')
 
-          gh api /repos/saleor/saleor-cloud-deployments/dispatches --input - <<< $payload
+          gh api /repos/weenspace/weenspace-cloud-deployments/dispatches --input - <<< $payload

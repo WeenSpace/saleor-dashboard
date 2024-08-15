@@ -34,7 +34,7 @@ program
 
 async function getTestsStatus(runId, testmoToken) {
   const runResult = await fetch(
-    `https://saleor.testmo.net/api/v1/automation/runs/${runId}`,
+    `https://weenspace.testmo.net/api/v1/automation/runs/${runId}`,
     {
       headers: {
         Authorization: `Bearer ${testmoToken}`,
@@ -48,7 +48,7 @@ function convertResults(results, environment, refName, additionalTitle) {
   let status = results?.result?.status === 2 ? "SUCCESS" : "FAILURE";
   let message = `Tests run on environment: \n${environment} \n`;
 
-  const linkToResults = `https:\/\/saleor.testmo.net\/automation\/runs\/view\/${results.result.id}`;
+  const linkToResults = `https:\/\/weenspace.testmo.net\/automation\/runs\/view\/${results.result.id}`;
   const threads = results.result.threads;
 
   if (Array.isArray(threads)) {

@@ -11,19 +11,19 @@ jobs:
     runs-on: ubuntu-20.04
     env:
       ## backward compatibility for older versions
-      APPS_MARKETPLACE_API_URI: "https://apps.staging.saleor.io/api/v2/saleor-apps"
+      APPS_MARKETPLACE_API_URI: "https://apps.staging.weenspace.com/api/v2/weenspace-apps"
       ## backward compatibility for older versions
       API_URI: /graphql/
 
       API_URL: /graphql/
       APP_MOUNT_URI: /dashboard/
       STATIC_URL: /dashboard/static/
-      SENTRY_ORG: saleor
+      SENTRY_ORG: weenspace
       SENTRY_PROJECT: dashboard
       SENTRY_URL_PREFIX: "~/dashboard/static"
       SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
       SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
-      APPS_MARKETPLACE_API_URL: "https://apps.staging.saleor.io/api/v2/saleor-apps"
+      APPS_MARKETPLACE_API_URL: "https://apps.staging.weenspace.come/api/v2/weenspace-apps"
       IS_CLOUD_INSTANCE: true
     steps:
       - uses: actions/checkout@v2
@@ -56,11 +56,11 @@ jobs:
 
       - name: Deploy dev
         run: |
-          aws s3 sync build/dashboard "s3://${DEPLOYMENT_BUCKET}/saleor-dev/static/"
-          aws s3 cp build/dashboard/index.html "s3://${DEPLOYMENT_BUCKET}/saleor-dev/"
+          aws s3 sync build/dashboard "s3://${DEPLOYMENT_BUCKET}/weenspace-dev/static/"
+          aws s3 cp build/dashboard/index.html "s3://${DEPLOYMENT_BUCKET}/weenspace-dev/"
 
-          aws s3 sync build/dashboard "s3://${DEPLOYMENT_BUCKET}/saleor-dev2/static/"
-          aws s3 cp build/dashboard/index.html "s3://${DEPLOYMENT_BUCKET}/saleor-dev2/"
+          aws s3 sync build/dashboard "s3://${DEPLOYMENT_BUCKET}/weenspace-dev2/static/"
+          aws s3 cp build/dashboard/index.html "s3://${DEPLOYMENT_BUCKET}/weenspace-dev2/"
         env:
           DEPLOYMENT_BUCKET: ${{ secrets.AWS_CLOUD_DEV_DEPLOYMENT_BUCKET }}
 

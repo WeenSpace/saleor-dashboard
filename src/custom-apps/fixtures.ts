@@ -14,6 +14,6 @@ export const webhook: WebhookDetailsFragment = {
   name: "Webhook Test 2",
   secretKey: "zxczx_asdas",
   subscriptionQuery: "subscription { event { ... on ProductUpdated { product { name } } } }",
-  targetUrl: "http://www.getsaleor.com",
+  targetUrl: "http://www.weenspace.com",
   customHeaders: "{}",
 };

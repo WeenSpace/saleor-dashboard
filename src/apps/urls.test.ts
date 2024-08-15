@@ -29,20 +29,20 @@ describe("AppUrls (apps/urls.ts)", () => {
       beforeEach(() => {
         jest
           .spyOn(config, "getApiUrl")
-          .mockImplementation(() => "https://shop.saleor.cloud/graphql/");
+          .mockImplementation(() => "https://shop.weenspace.cloud/graphql/");
       });
       it.each<[string, string, Record<string, string> & { theme: ThemeType }, string]>([
         [
           "XyZ123",
           "https://my-app.vercel.app",
           { param1: "param1", theme: "light" },
-          "https://my-app.vercel.app?domain=shop.saleor.cloud&saleorApiUrl=https%3A%2F%2Fshop.saleor.cloud%2Fgraphql%2F&id=XyZ123&param1=param1&theme=light",
+          "https://my-app.vercel.app?domain=shop.weenspace.cloud&weenspaceApiUrl=https%3A%2F%2Fshop.weenspace.cloud%2Fgraphql%2F&id=XyZ123&param1=param1&theme=light",
         ],
         [
           "AbC987",
           "https://my-app.vercel.app/configuration",
           { param1: "param1", param2: "param2", theme: "light" },
-          "https://my-app.vercel.app/configuration?domain=shop.saleor.cloud&saleorApiUrl=https%3A%2F%2Fshop.saleor.cloud%2Fgraphql%2F&id=AbC987&param1=param1&param2=param2&theme=light",
+          "https://my-app.vercel.app/configuration?domain=shop.weenspace.cloud&weenspaceApiUrl=https%3A%2F%2Fshop.weenspace.cloud%2Fgraphql%2F&id=AbC987&param1=param1&param2=param2&theme=light",
         ],
       ])("Generates valid URL from segments", (id, appUrl, params, expectedUrl) => {
         const result = AppUrls.resolveAppIframeUrl(id, appUrl, params);

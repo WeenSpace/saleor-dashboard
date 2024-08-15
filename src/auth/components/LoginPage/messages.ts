@@ -13,8 +13,8 @@ export const errorMessages = defineMessages({
     description: "error message",
   },
   serverError: {
-    id: "ChGI4V",
-    defaultMessage: "Saleor is unavailable, please check your network connection and try again.",
+    id: "7QN75V",
+    defaultMessage: "WeenSpace is unavailable, please check your network connection and try again.",
     description: "error message",
   },
   noPermissionsError: {

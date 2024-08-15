@@ -22,7 +22,7 @@ export const OrderManualTransactionRefundWarning = () => {
           size={2}
           textDecoration="underline"
           color={textColor}
-          href="https://docs.saleor.io/docs/next/developer/payments#manual-refund"
+          href="https://docs.weenspace.com/docs/next/developer/payments#manual-refund"
           target="__blank"
         >
           <FormattedMessage {...messages.seeDocs} />

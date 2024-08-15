@@ -8,14 +8,14 @@ const mockApps = [releasedApp, comingSoonApp];
 type Fetch = typeof global.fetch;
 
 global.fetch = jest.fn(url => {
-  if (url === "https://apps.saleor.io/apps") {
+  if (url === "https://apps.weenspace.com/apps") {
     return Promise.resolve({
       ok: true,
       json: jest.fn(() => Promise.resolve(mockApps)),
     } as unknown as Response);
   }
 
-  if (url === "https://apps.saleor.io/failing-apps-endpoint") {
+  if (url === "https://apps.weenspace.com/failing-apps-endpoint") {
     return Promise.resolve({
       ok: false,
       statusText: "API error",
@@ -27,7 +27,7 @@ global.fetch = jest.fn(url => {
 describe("apps hooks useAppstoreApps", () => {
   it("should return apps when request to proper appstore url returns apps", async () => {
     // Arrange
-    const appstoreUrl = "https://apps.saleor.io/apps";
+    const appstoreUrl = "https://apps.weenspace.com/apps";
     // Act
     const { result, waitForNextUpdate } = renderHook(() => useAppstoreApps(appstoreUrl));
 
@@ -37,7 +37,7 @@ describe("apps hooks useAppstoreApps", () => {
   });
   it("should return error when request to proper appstore url returns error", async () => {
     // Arrange
-    const appstoreUrl = "https://apps.saleor.io/failing-apps-endpoint";
+    const appstoreUrl = "https://apps.weenspace.com/failing-apps-endpoint";
     // Act
     const { result, waitForNextUpdate } = renderHook(() => useAppstoreApps(appstoreUrl));
 

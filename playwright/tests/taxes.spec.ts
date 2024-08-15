@@ -12,15 +12,15 @@ test.beforeEach(({ page }) => {
   configurationPage = new ConfigurationPage(page);
   taxesPage = new TaxesPage(page);
 });
-test("TC: SALEOR_115 Change taxes in channel to use tax app  @taxes @e2e", async () => {
+test("TC: WEENSPACE_115 Change taxes in channel to use tax app  @taxes @e2e", async () => {
   await configurationPage.goToConfigurationView();
   await configurationPage.openTaxes();
   await taxesPage.selectChannel(CHANNELS.channelForTaxEdition.name);
-  await taxesPage.selectTaxCalculationMethod("Saleor Dummy tax app");
+  await taxesPage.selectTaxCalculationMethod("WeenSpace Dummy tax app");
   await taxesPage.clickSaveButton();
   await taxesPage.expectSuccessBanner();
 });
-test("TC: SALEOR_116 Change taxes in channel: enter prices without tax, do not show gross price, add country exception @taxes @e2e", async () => {
+test("TC: WEENSPACE_116 Change taxes in channel: enter prices without tax, do not show gross price, add country exception @taxes @e2e", async () => {
   await taxesPage.gotoChannelsTabUrl();
   await taxesPage.selectChannel(CHANNELS.channelForTaxEdition.name);
   await taxesPage.selectPricesWithoutTaxes();
@@ -37,7 +37,7 @@ test("TC: SALEOR_116 Change taxes in channel: enter prices without tax, do not s
   await taxesPage.clickSaveButton();
   await taxesPage.expectSuccessBanner();
 });
-test("TC: SALEOR_117 Add new country and tax rates to it @taxes @e2e", async () => {
+test("TC: WEENSPACE_117 Add new country and tax rates to it @taxes @e2e", async () => {
   await taxesPage.gotoChannelsTabUrl();
   await taxesPage.clickCountriesTab();
   await taxesPage.clickAddCountryButton();
@@ -52,7 +52,7 @@ test("TC: SALEOR_117 Add new country and tax rates to it @taxes @e2e", async () 
   await taxesPage.clickSaveButton();
   await taxesPage.expectSuccessBanner();
 });
-test("TC: SALEOR_118 Add new class with metadata and set tax rate for single country @taxes @e2e", async () => {
+test("TC: WEENSPACE_118 Add new class with metadata and set tax rate for single country @taxes @e2e", async () => {
   await taxesPage.gotoChannelsTabUrl();
   await taxesPage.clickTaxClassTab();
   await taxesPage.clickCreateClassButton();

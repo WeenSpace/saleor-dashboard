@@ -36,7 +36,7 @@ export const MarkAsPaid = ({ hasError, isChecked, onCheckedChange, disabled }: M
           values={{
             link: (
               <Link
-                href="https://docs.saleor.io/docs/3.x/developer/payments#processing-a-payment-with-payment-app"
+                href="https://docs.weenspace.io/docs/3.x/developer/payments#processing-a-payment-with-payment-app"
                 target="_blank"
                 rel="noopener noreferer"
               >
@@ -53,7 +53,7 @@ export const MarkAsPaid = ({ hasError, isChecked, onCheckedChange, disabled }: M
           values={{
             link: (
               <Link
-                href="https://docs.saleor.io/docs/3.x/developer/payments#payment-plugin"
+                href="https://docs.weenspace.io/docs/3.x/developer/payments#payment-plugin"
                 target="_blank"
                 rel="noopener noreferer"
               >

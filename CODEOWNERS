@@ -1,5 +1,5 @@
-* @saleor/ui-guild
-/.github/ @saleor/SRE
+* @weenspace/ui-guild
+/.github/ @weenspace/SRE
 
-/playwright @saleor/qa-guild
-/cypress @saleor/qa-guild
+/playwright @weenspace/qa-guild
+/cypress @weenspace/qa-guild

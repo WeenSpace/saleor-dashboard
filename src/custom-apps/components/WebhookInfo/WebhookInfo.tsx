@@ -100,7 +100,7 @@ const WebhookInfo: React.FC<WebhookInfoProps> = ({ data, disabled, errors, onCha
                     <Link
                       target="_blank"
                       rel="noopener noreferrer"
-                      href="https://docs.saleor.io/docs/3.x/developer/extending/apps/synchronous-webhooks/key-concepts#payload-signature"
+                      href="https://docs.weenspace.com/docs/3.x/developer/extending/apps/synchronous-webhooks/key-concepts#payload-signature"
                     >
                       <FormattedMessage {...messages.learnMore} />
                     </Link>

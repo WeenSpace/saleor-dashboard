@@ -36,14 +36,14 @@ jobs:
         run: |
           node .github/workflows/cleanEnvironments.js \
           --token "$TOKEN" \
-          --environments_to_clean_regex "master.staging.saleor.cloud"
+          --environments_to_clean_regex "master.staging.weenspace.cloud"
 
       - name: Notify Slack
         if: steps.clean-environments.outputs.sendWarningOnSlack == 'true'
         env:
           JOB_DEPLOYMENT_KIND: "release and master envs"
           JOB_STATUS: 'failure'
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_SALEOR_QA_WEBHOOK_URL }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEENSPACE_QA_WEBHOOK_URL }}
           JOB_TITLE: ${{ steps.clean-environments.outputs.warningMessage }}
           JOB_KIND: "Clean Environments"
         run: |
@@ -54,7 +54,7 @@ jobs:
         env:
           JOB_DEPLOYMENT_KIND: "release and master envs"
           JOB_STATUS: 'failure'
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_SALEOR_QA_PRIVATE_WEBHOOK_URL }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEENSPACE_QA_PRIVATE_WEBHOOK_URL }}
           JOB_TITLE: ${{ steps.clean-environments.outputs.warningMessage }}
           JOB_KIND: "Clean Environments"
         run: |

@@ -1,47 +1,47 @@
-![Saleor Dashboard](https://user-images.githubusercontent.com/44495184/185379472-2a204c0b-9b7a-4a3e-93c0-2cb85205ed5e.png)
+![WeenSpace Admin](https://user-images.githubusercontent.com/44495184/185379472-2a204c0b-9b7a-4a3e-93c0-2cb85205ed5e.png)
 
 <div align="center">
-  <h1>Saleor Dashboard</h1>
+  <h1>WeenSpace Admin</h1>
 </div>
 
 <div align="center">
-  <p>A GraphQL-powered, single-page dashboard application for <a href="https://github.com/saleor/saleor">Saleor</a>.</p>
+  <p>A GraphQL-powered, single-page dashboard application for <a href="https://github.com/WeenSpace/weenspace">weenspace</a>.</p>
 </div>
 
 <div align="center">
-  <a href="https://saleor.io/">🏠 Website</a>
+  <a href="https://weenspace.com/">🏠 Website</a>
   <span> • </span>
-  <a href="https://docs.saleor.io/docs/3.x/">📚 Docs</a>
+  <a href="https://docs.weenspace.com/docs/3.x/">📚 Docs</a>
   <span> • </span>
-  <a href="https://saleor.io/blog/">📰 Blog</a>
+  <a href="https://weenspace.com/blog/">📰 Blog</a>
   <span> • </span>
-  <a href="https://twitter.com/getsaleor">🐦 Twitter</a>
+  <a href="https://twitter.com/weenspace">🐦 Twitter</a>
   <span> • </span>
   <a href="https://discord.gg/H52JTZAtSH">💬 Discord</a>
 </div>
 
 <div align="center">
    <span> • </span>
-  <a href="https://githubbox.com/saleor/saleor-dashboard">🔎 Explore Code</a>
+  <a href="https://githubbox.com/weenspace/weenspace-admin">🔎 Explore Code</a>
 </div>
 
 ## Prerequisites
 
 - Node.js v18+
-- A running instance of [Saleor](https://github.com/saleor/saleor/)
+- A running instance of [WeenSpace](https://github.com/WeenSpace/weenspace/)
 
 ## Development
 
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/saleor/saleor-dashboard.git
+git clone https://github.com/WeenSpace/weenspace-admin.git
 ```
 
 2. Enter the project directory:
 
 ```bash
-cd saleor-dashboard
+cd weenspace-admin
 ```
 
 3. Install the dependencies:
@@ -59,7 +59,7 @@ npm run dev
 ```
 
 > Note:
-> If you see CORS errors, check [CORS configuration](https://docs.saleor.io/docs/3.x/developer/running-saleor/configuration#allowed_client_hosts) of your Saleor instance or CORS settings in the Cloud Console.
+> If you see CORS errors, check [CORS configuration](https://docs.weenspace.com/docs/3.x/developer/running-weenspace/configuration#allowed_client_hosts) of your WeenSpace instance or CORS settings in the Cloud Console.
 
 ## Docs
 

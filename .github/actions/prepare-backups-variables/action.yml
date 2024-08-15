@@ -2,7 +2,7 @@ name: Prepare backup variables
 description: Prepare database snapshots
 inputs:
   CLI_TOKEN:
-    description: "Saleor cli token"
+    description: "WeenSpace cli token"
     required: true
   BACKUP_NAMESPACE:
     description: "The backups namespace"
@@ -20,7 +20,7 @@ outputs:
 runs:
   using: "composite"
   steps:
-    - name: Saleor login
+    - name: WeenSpace login
       uses: ./.github/actions/cli-login
       with:
         token: ${{ inputs.CLI_TOKEN }}
@@ -31,9 +31,9 @@ runs:
       env:
         BACKUP_NAME: ${{ inputs.BACKUP_NAMESPACE }}
       run: |
-        BACKUPS=$(npx saleor backup list --name="$BACKUP_NAME" --latest --json)
+        BACKUPS=$(npx weenspace backup list --name="$BACKUP_NAME" --latest --json)
         BACKUP_ID=$(echo "$BACKUPS" | jq -r '.[0].key')
-        BACKUP_VER=$(echo "$BACKUPS" | jq -r '.[0].saleor_version')
+        BACKUP_VER=$(echo "$BACKUPS" | jq -r '.[0].weenspace_version')
         BACKUP_NAME=$(echo "$BACKUPS" | jq -r '.[0].name')
 
         echo "BACKUP_ID=$BACKUP_ID" >> $GITHUB_OUTPUT

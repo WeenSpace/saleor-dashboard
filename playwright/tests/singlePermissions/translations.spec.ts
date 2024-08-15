@@ -4,7 +4,7 @@ import { MainMenuPage } from "@pages/mainMenuPage";
 import { expect, test } from "@playwright/test";
 
 test.use({ storageState: "playwright/.auth/translations.json" });
-test("TC: SALEOR_22 User should be able to navigate to translations page as a staff member using TRANSLATION permission @e2e", async ({
+test("TC: WEENSPACE_22 User should be able to navigate to translations page as a staff member using TRANSLATION permission @e2e", async ({
   page,
 }) => {
   const mainMenuPage = new MainMenuPage(page);

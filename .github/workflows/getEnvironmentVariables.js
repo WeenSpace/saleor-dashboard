@@ -28,8 +28,8 @@ async function getBranch(token, version) {
     const response = await octokit.request(
       `GET /repos/{owner}/{repo}/branches/${formattedVersion}`,
       {
-        owner: "saleor",
-        repo: "saleor-dashboard",
+        owner: "weenspace",
+        repo: "weenspace-dashboard",
         headers: {
           "X-GitHub-Api-Version": "2022-11-28",
         },

@@ -7,7 +7,9 @@ test.use({ storageState: "./playwright/.auth/admin.json" });
 
 const pageTypeName = `e2e-page-type-${faker.datatype.number()}`;
 
-test("TC: SALEOR_187 As an admin user I can create page type @e2e @page-type", async ({ page }) => {
+test("TC: WEENSPACE_187 As an admin user I can create page type @e2e @page-type", async ({
+  page,
+}) => {
   const pageTypePage = new PageTypesPage(page);
 
   await pageTypePage.gotoPageTypeListPage();
@@ -19,7 +21,9 @@ test("TC: SALEOR_187 As an admin user I can create page type @e2e @page-type", a
   await pageTypePage.gotoPageTypeListPage();
   await expect(pageTypePage.pageTypeList).toContainText(pageTypeName);
 });
-test("TC: SALEOR_188 As an admin user I can update page type@e2e @page-type", async ({ page }) => {
+test("TC: WEENSPACE_188 As an admin user I can update page type@e2e @page-type", async ({
+  page,
+}) => {
   const pageTypePage = new PageTypesPage(page);
   const updatedPageTypeName = `updated-e2e-page-type-${faker.datatype.number()}`;
   const attributeName = ATTRIBUTES.attributeToBeAssignedToPageType.name;
@@ -33,7 +37,7 @@ test("TC: SALEOR_188 As an admin user I can update page type@e2e @page-type", as
   await pageTypePage.expectSuccessBanner();
   await expect(pageTypePage.pageAttributes).toContainText(attributeName);
 });
-test("TC: SALEOR_189 As an admin user I can delete page type with assigned content@e2e @page-type", async ({
+test("TC: WEENSPACE_189 As an admin user I can delete page type with assigned content@e2e @page-type", async ({
   page,
 }) => {
   const pageTypePage = new PageTypesPage(page);
@@ -48,7 +52,7 @@ test("TC: SALEOR_189 As an admin user I can delete page type with assigned conte
   await pageTypePage.gotoPageTypeListPage();
   await expect(pageTypePage.pageTypeList).not.toContainText(pageType.name);
 });
-test("TC: SALEOR_190 As an admin user I can delete several page types@e2e @page-type", async ({
+test("TC: WEENSPACE_190 As an admin user I can delete several page types@e2e @page-type", async ({
   page,
 }) => {
   const pageTypePage = new PageTypesPage(page);

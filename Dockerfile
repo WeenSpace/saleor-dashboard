@@ -29,7 +29,7 @@ ARG LOCALE_CODE
 
 ENV API_URL ${API_URL:-http://localhost:8000/graphql/}
 ENV APP_MOUNT_URI ${APP_MOUNT_URI:-/dashboard/}
-ENV APPS_MARKETPLACE_API_URL ${APPS_MARKETPLACE_API_URL:-https://apps.saleor.io/api/v2/saleor-apps}
+ENV APPS_MARKETPLACE_API_URL ${APPS_MARKETPLACE_API_URL:-https://apps.weenspace.io/api/v2/weenspace-apps}
 ENV APPS_TUNNEL_URL_KEYWORDS ${APPS_TUNNEL_URL_KEYWORDS}
 ENV STATIC_URL ${STATIC_URL:-/dashboard/}
 ENV SKIP_SOURCEMAPS ${SKIP_SOURCEMAPS:-true}
@@ -43,11 +43,11 @@ COPY ./nginx/default.conf /etc/nginx/conf.d/default.conf
 COPY ./nginx/replace-api-url.sh /docker-entrypoint.d/50-replace-api-url.sh
 COPY --from=builder /app/build/ /app/
 
-LABEL org.opencontainers.image.title="saleor/saleor-dashboard"                                  \
-      org.opencontainers.image.description="A GraphQL-powered, single-page dashboard application for Saleor." \
-      org.opencontainers.image.url="https://saleor.io/"                                \
-      org.opencontainers.image.source="https://github.com/saleor/saleor-dashboard"     \
+LABEL org.opencontainers.image.title="weenspace/weenspace-admin"                                  \
+      org.opencontainers.image.description="A GraphQL-powered, single-page admin application for Weenspace." \
+      org.opencontainers.image.url="https://weenspace.com/"                                \
+      org.opencontainers.image.source="https://github.com/WeenSpace/weenspace-admin"     \
       org.opencontainers.image.revision="$COMMIT_ID"                                   \
       org.opencontainers.image.version="$PROJECT_VERSION"                              \
-      org.opencontainers.image.authors="Saleor Commerce (https://saleor.io)"           \
-      org.opencontainers.image.licenses="BSD 3"
+      org.opencontainers.image.authors="Weenspace Commerce (https://weenspace.com)"           \
+      org.opencontainers.image.licenses="MIT"

@@ -3,7 +3,7 @@ import { HomePage } from "@pages/homePage";
 import { expect, test } from "@playwright/test";
 
 test.use({ storageState: "./playwright/.auth/admin.json" });
-test("TC: SALEOR_29 Correct information on dashboard home page @e2e", async ({ page }) => {
+test("TC: WEENSPACE_29 Correct information on dashboard home page @e2e", async ({ page }) => {
   const homePage = new HomePage(page);
 
   await page.goto(URL_LIST.homePage);

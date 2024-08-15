@@ -17,8 +17,8 @@ export const messages = defineMessages({
     description: "information",
   },
   installationCloudOnly: {
-    defaultMessage: "Use Saleor Cloud to access Saleor Apps",
+    defaultMessage: "Use WeenSpace Cloud to access WeenSpace Apps",
     description: "description",
-    id: "IEpmGQ",
+    id: "sc7xno",
   },
 });

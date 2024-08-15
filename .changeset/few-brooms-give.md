@@ -1,5 +1,5 @@
 ---
-"saleor-dashboard": patch
+"weenspace-admin": patch
 ---
 
 Product variant forms now show missing price and name errors when these fields are empty.

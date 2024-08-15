@@ -1,5 +1,5 @@
 ---
-"saleor-dashboard": patch
+"weenspace-admin": patch
 ---
 
 Fix dockerfile build error caused by deleted file and bash script

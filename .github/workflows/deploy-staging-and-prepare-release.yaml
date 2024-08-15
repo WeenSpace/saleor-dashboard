@@ -44,19 +44,19 @@ jobs:
       CUSTOM_VERSION: ${{ env.CUSTOM_VERSION || env.VERSION }}
     env:
       ## backward compatibility for older versions
-      APPS_MARKETPLACE_API_URI: "https://apps.staging.saleor.io/api/v2/saleor-apps"
+      APPS_MARKETPLACE_API_URI: "https://apps.staging.weenspace.com/api/v2/weenspace-apps"
       ## backward compatibility for older versions
       API_URI: /graphql/
 
       API_URL: /graphql/
       APP_MOUNT_URI: /dashboard/
       STATIC_URL: /dashboard/static/
-      SENTRY_ORG: saleor
+      SENTRY_ORG: weenspace
       SENTRY_PROJECT: dashboard
       SENTRY_URL_PREFIX: "~/dashboard/static"
       SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
       SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
-      APPS_MARKETPLACE_API_URL: "https://apps.staging.saleor.io/api/v2/saleor-apps"
+      APPS_MARKETPLACE_API_URL: "https://apps.staging.weenspace.com/api/v2/weenspace-apps"
       VERSION: ${{ github.event.inputs.git_ref || github.ref_name }}
       IS_CLOUD_INSTANCE: true
       POSTHOG_KEY: ${{ secrets.POSTHOG_KEY }}
@@ -67,10 +67,10 @@ jobs:
           ref: ${{ env.VERSION }}
 
       - name: Set environment
-        # Convert version into staging deployment name (e.g 3.3.0 -> saleor-staging-v33)
+        # Convert version into staging deployment name (e.g 3.3.0 -> weenspace-staging-v33)
         run: |
           set -x
-          environment=$(echo $VERSION | sed -n 's#\([0-9]\+\).\([0-9]\+\).*#saleor-staging-v\1\2#p')
+          environment=$(echo $VERSION | sed -n 's#\([0-9]\+\).\([0-9]\+\).*#weenspace-staging-v\1\2#p')
           echo "ENVIRONMENT=${environment}" >> "$GITHUB_ENV"
       
       - name: Set custom version
@@ -174,7 +174,7 @@ jobs:
             }
           }')
 
-          gh api /repos/saleor/saleor-cloud-deployments/dispatches --input - <<< $payload
+          gh api /repos/weenspace/weenspace-cloud-deployments/dispatches --input - <<< $payload
 
   run-tests-on-release:
     needs: [prepare-release, build]

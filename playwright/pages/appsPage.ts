@@ -20,7 +20,7 @@ export class AppsPage extends BasePage {
     readonly installedAppRow = page.getByTestId("apps:installed-app-row"),
     readonly appKlaviyo = page.getByTestId("app-klaviyo"),
     readonly appAdyen = page.getByTestId("app-adyen"),
-    readonly appQA = page.getByTestId("app-saleorqa app"),
+    readonly appQA = page.getByTestId("app-weenspaceqa app"),
     readonly installationPendingLabel = page.getByTestId("app-pending-label").first(),
   ) {
     super(page);

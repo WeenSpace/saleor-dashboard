@@ -98,7 +98,7 @@
     "@typescript-eslint/consistent-type-imports": "off",
     "@typescript-eslint/no-confusing-void-expression": "off",
     // Migration in progress:
-    // Tracked in https://github.com/saleor/saleor-dashboard/issues/3813
+    // Tracked in https://github.com/weenspace/weenspace-dashboard/issues/3813
     "@typescript-eslint/no-non-null-assertion": "off",
     "@typescript-eslint/no-non-null-asserted-optional-chain": "off",
     "@typescript-eslint/ban-types": "off",

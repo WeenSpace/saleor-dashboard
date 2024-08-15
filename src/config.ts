@@ -3,16 +3,17 @@ import { SearchVariables } from "./hooks/makeSearch";
 import { ListSettings, ListViews, Pagination } from "./types";
 
 export const getAppDefaultUri = () => "/";
-export const getAppMountUri = () => window?.__SALEOR_CONFIG__?.APP_MOUNT_URI || getAppDefaultUri();
-export const getApiUrl = () => window.__SALEOR_CONFIG__.API_URL;
+export const getAppMountUri = () =>
+  window?.__WEENSPACE_CONFIG__?.APP_MOUNT_URI || getAppDefaultUri();
+export const getApiUrl = () => window.__WEENSPACE_CONFIG__.API_URL;
 export const SW_INTERVAL = parseInt(process.env.SW_INTERVAL ?? "300", 10);
-export const IS_CLOUD_INSTANCE = window.__SALEOR_CONFIG__.IS_CLOUD_INSTANCE === "true";
+export const IS_CLOUD_INSTANCE = window.__WEENSPACE_CONFIG__.IS_CLOUD_INSTANCE === "true";
 
 export const getAppsConfig = () => ({
-  marketplaceApiUri: window.__SALEOR_CONFIG__.APPS_MARKETPLACE_API_URL,
-  tunnelUrlKeywords: window.__SALEOR_CONFIG__.APPS_TUNNEL_URL_KEYWORDS?.split(";") || [
+  marketplaceApiUri: window.__WEENSPACE_CONFIG__.APPS_MARKETPLACE_API_URL,
+  tunnelUrlKeywords: window.__WEENSPACE_CONFIG__.APPS_TUNNEL_URL_KEYWORDS?.split(";") || [
     ".ngrok.io",
-    ".saleor.live",
+    ".weenspace.live",
     ".trycloudflare.com",
   ],
 });

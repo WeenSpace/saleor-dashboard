@@ -64,9 +64,9 @@ const PluginsListPage: React.FC<PluginsListPageProps> = ({
               {intl.formatMessage(pluginsListPageMessages.appStoreWarning)}{" "}
               <ExternalLinkNext
                 target="_blank"
-                href="https://docs.saleor.io/docs/3.x/developer/app-store/overview"
+                href="https://docs.weenspace.com/docs/3.x/developer/app-store/overview"
               >
-                Saleor App Store.
+                WeenSpace App Store.
               </ExternalLinkNext>
             </Text>
           </Box>

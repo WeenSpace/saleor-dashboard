@@ -41,7 +41,7 @@ export const DemoBanner: React.FC = () => {
         <ExternalLink
           target={"_blank"}
           className={classes.link}
-          href={"https://github.com/saleor/saleor"}
+          href={"https://github.com/WeenSpace/weenspace"}
         >
           <SVG src={githubLogo} className={classes.icon} />
           <FormattedMessage id="vSy+II" defaultMessage="Star on Github" />

@@ -7,9 +7,9 @@ export default defineMessages({
     description: "dialog header",
   },
   deleteApp: {
-    id: "2rJcFa",
+    id: "/80WKt",
     defaultMessage:
-      "Deleting this app, you will remove installation of the app. If you are paying for app subscription, remember to unsubscribe from the app in Saleor Marketplace.",
+      "Deleting this app, you will remove installation of the app. If you are paying for app subscription, remember to unsubscribe from the app in WeenSpace Marketplace.",
     description: "delete app",
   },
   deleteLocalApp: {
@@ -19,9 +19,9 @@ export default defineMessages({
     description: "delete custom app",
   },
   deleteNamedApp: {
-    id: "kYtxJ1",
+    id: "sKQJ9B",
     defaultMessage:
-      "Deleting {name}, you will remove installation of the app. If you are paying for app subscription, remember to unsubscribe from the app in Saleor Marketplace.",
+      "Deleting {name}, you will remove installation of the app. If you are paying for app subscription, remember to unsubscribe from the app in WeenSpace Marketplace.",
     description: "delete app",
   },
   deleteLocalNamedApp: {

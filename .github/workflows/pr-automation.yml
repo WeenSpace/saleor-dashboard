@@ -49,7 +49,7 @@ jobs:
           POOL_NAME: ${{ steps.cloud_variables.outputs.POOL_NAME }}
           POOL_INSTANCE: ${{ steps.cloud_variables.outputs.POOL_INSTANCE }}
           BACKUP_ID: ${{ steps.cloud_variables.outputs.BACKUP_ID }}
-          SALEOR_CLOUD_SERVICE: ${{ steps.cloud_variables.outputs.SALEOR_CLOUD_SERVICE }}
+          WEENSPACE_CLOUD_SERVICE: ${{ steps.cloud_variables.outputs.WEENSPACE_CLOUD_SERVICE }}
 
       - name: Generate shard matrix
         id: generate-shard-matrix
@@ -69,7 +69,7 @@ jobs:
           echo "SHARD_MATRIX=${shard_matrix[0]}" >> "$GITHUB_OUTPUT"
 
   deploy-dashboard:
-    if: github.event.pull_request.head.repo.full_name == 'saleor/saleor-dashboard'
+    if: github.event.pull_request.head.repo.full_name == 'weenspace/weenspace-dashboard'
     runs-on: ubuntu-22.04
     needs: initialize-cloud
     permissions:
@@ -111,10 +111,10 @@ jobs:
           ## backward compatibility for older versions
           API_URI: ${{ needs.initialize-cloud.outputs.API_URL }}
           ## backward compatibility for older versions
-          APPS_MARKETPLACE_API_URI: "https://apps.staging.saleor.io/api/v2/saleor-apps"
+          APPS_MARKETPLACE_API_URI: "https://apps.staging.weenspace.com/api/v2/weenspace-apps"
 
           API_URL: ${{ needs.initialize-cloud.outputs.API_URL }}
-          APPS_MARKETPLACE_API_URL: "https://apps.staging.saleor.io/api/v2/saleor-apps"
+          APPS_MARKETPLACE_API_URL: "https://apps.staging.weenspace.com/api/v2/weenspace-apps"
           APP_MOUNT_URI: /
           STATIC_URL: /
           IS_CLOUD_INSTANCE: true
